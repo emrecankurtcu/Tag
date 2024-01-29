@@ -1,0 +1,502 @@
+{
+	"info": {
+		"_postman_id": "74a4434b-4490-42ec-8cea-8db9f30d0977",
+		"name": "Tag",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28633668"
+	},
+	"item": [
+		{
+			"name": "GetTags",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}/api/v1/tag",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"tag"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetTags",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}/api/v1/tag",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tag"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Jan 2024 22:25:24 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"tag\": null,\n        \"username\": null,\n        \"creationDate\": \"2024-01-30T00:16:26.990269\",\n        \"updateDate\": \"2024-01-30T00:16:48.130821\"\n    },\n    {\n        \"id\": 4,\n        \"tag\": \"fdhfdhdfhfdh\",\n        \"username\": \"emrecan.kurtcu\",\n        \"creationDate\": null,\n        \"updateDate\": null\n    },\n    {\n        \"id\": 6,\n        \"tag\": \"fdhfdhdfhfdh\",\n        \"username\": \"emrecan.kurtcu\",\n        \"creationDate\": \"2024-01-30T00:18:16.450649\",\n        \"updateDate\": \"2024-01-30T00:18:16.450649\"\n    },\n    {\n        \"id\": 8,\n        \"tag\": \"fdhfdhdfhfdh\",\n        \"username\": \"emrecan.kurtcu\",\n        \"creationDate\": \"2024-01-30T00:28:26.293296\",\n        \"updateDate\": \"2024-01-30T00:28:26.293296\"\n    },\n    {\n        \"id\": 2,\n        \"tag\": \"vvve\",\n        \"username\": \"emrecan.kurtcu\",\n        \"creationDate\": \"2024-01-30T00:16:26.990269\",\n        \"updateDate\": \"2024-01-30T00:16:48.130821\"\n    },\n    {\n        \"id\": 7,\n        \"tag\": \"ee\",\n        \"username\": \"emrecan.kurtcu\",\n        \"creationDate\": \"2024-01-30T00:18:25.723232\",\n        \"updateDate\": \"2024-01-30T00:18:25.723232\"\n    },\n    {\n        \"id\": 13,\n        \"tag\": \"test\",\n        \"username\": \"emrecan.kurtcu\",\n        \"creationDate\": \"2024-01-30T01:21:04.259333\",\n        \"updateDate\": \"2024-01-30T01:21:04.259333\"\n    },\n    {\n        \"id\": 14,\n        \"tag\": \"test\",\n        \"username\": \"emrecan.kurtcu\",\n        \"creationDate\": \"2024-01-30T01:22:12.806509\",\n        \"updateDate\": \"2024-01-30T01:22:12.806509\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "AddTagReq",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tag\":\"test\",\r\n    \"username\":\"emrecan.kurtcu\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{host}}/api/v1/tag/add",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"tag",
+						"add"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "AddTagSuccesResp",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tag\":\"test\",\r\n    \"username\":\"emrecan.kurtcu\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}/api/v1/tag/add",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tag",
+								"add"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Jan 2024 22:21:04 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"errorMessage\": null,\n    \"errorCode\": null\n}"
+				},
+				{
+					"name": "AddTagFailResp",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tag\":\"test\",\r\n    \"username\":\"emrecan.kurtcu3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}/api/v1/tag/add",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tag",
+								"add"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Jan 2024 22:26:09 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"errorMessage\": \"User not found\",\n    \"errorCode\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "UpdateTagReq",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tagId\":5,\r\n    \"username\":\"emrecan.kurtcu\",\r\n    \"tag\":\"test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{host}}/api/v1/tag/update",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"tag",
+						"update"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "UpdateTagResp",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tagId\":5,\r\n    \"username\":\"emrecan.kurtcu\",\r\n    \"tag\":\"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}/api/v1/tag/update",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tag",
+								"update"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Jan 2024 22:22:12 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"errorMessage\": null,\n    \"errorCode\": null\n}"
+				},
+				{
+					"name": "UpdateTagFailResp",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tagId\":5,\r\n    \"username\":\"emrecan.kurtcu3\",\r\n    \"tag\":\"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}/api/v1/tag/update",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tag",
+								"update"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Jan 2024 22:26:51 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"errorMessage\": \"User not found\",\n    \"errorCode\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "DeleteTagReq",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tagId\":5,\r\n    \"username\":\"emrecan.kurtcu\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{host}}/api/v1/tag/delete",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"tag",
+						"delete"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DeleteTagSuccesResp",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tagId\":5,\r\n    \"username\":\"emrecan.kurtcu\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}/api/v1/tag/delete",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tag",
+								"delete"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Jan 2024 22:23:05 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"errorMessage\": null,\n    \"errorCode\": null\n}"
+				},
+				{
+					"name": "DeleteTagFailResp",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tagId\":5,\r\n    \"username\":\"emrecan.kurtcu\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}/api/v1/tag/delete",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tag",
+								"delete"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Jan 2024 22:23:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"errorMessage\": \"Tag not found\",\n    \"errorCode\": null\n}"
+				}
+			]
+		}
+	]
+}
