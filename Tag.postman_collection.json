@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "74a4434b-4490-42ec-8cea-8db9f30d0977",
+		"_postman_id": "fccd07b6-0f36-401d-8959-e6b45dc3e3e5",
 		"name": "Tag",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "28633668"
@@ -497,6 +497,33 @@
 					"body": "{\n    \"success\": false,\n    \"errorMessage\": \"Tag not found\",\n    \"errorCode\": null\n}"
 				}
 			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost:8080",
+			"type": "string"
 		}
 	]
 }
