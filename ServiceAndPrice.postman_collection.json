@@ -1,0 +1,383 @@
+{
+	"info": {
+		"_postman_id": "79fb2a9a-1e2e-4d10-91fd-0ae16eb0c9b2",
+		"name": "ServiceAndPrice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28633668"
+	},
+	"item": [
+		{
+			"name": "GetServiceAndPrices",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"emrecan.kurtcu\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{host}}/api/v1/service-and-price",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"service-and-price"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetServiceAndPrices",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"emrecan.kurtcu\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}/api/v1/service-and-price",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"service-and-price"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Feb 2024 19:37:00 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"username\": \"emrecan.kurtcu\",\n        \"service\": \"TEST\",\n        \"price\": 1.55,\n        \"currency\": \"TRY\",\n        \"creationDate\": \"2024-02-01T22:32:50.794107\",\n        \"negotiable\": false\n    },\n    {\n        \"id\": 3,\n        \"username\": \"emrecan.kurtcu\",\n        \"service\": \"TEST\",\n        \"price\": 1.55,\n        \"currency\": \"TRY\",\n        \"creationDate\": \"2024-02-01T22:36:55.493341\",\n        \"negotiable\": false\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "AddServiceAndPriceReq",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"emrecan.kurtcu\",\r\n    \"service\":\"TEST\",\r\n    \"price\": 1.55,\r\n    \"currency\":\"TRY\",\r\n    \"isNegotiable\":true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{host}}/api/v1/service-and-price/add",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"service-and-price",
+						"add"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "AddServiceAndPriceSuccessResp",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"emrecan.kurtcu\",\r\n    \"service\":\"TEST\",\r\n    \"price\": 1.55,\r\n    \"currency\":\"TRY\",\r\n    \"isNegotiable\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}/api/v1/service-and-price/add",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"service-and-price",
+								"add"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Feb 2024 19:33:07 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"errorMessage\": null,\n    \"errorCode\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "UpdateServiceAndPriceReq",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"serviceId\":2,\r\n    \"username\":\"emrecan.kurtcu\",\r\n    \"service\":\"TEST22\",\r\n    \"price\": 5.44,\r\n    \"currency\":\"TRY\",\r\n    \"isNegotiable\":false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{host}}/api/v1/service-and-price/update",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"service-and-price",
+						"update"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "UpdateServiceAndPriceSuccessResp",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"serviceId\":2,\r\n    \"username\":\"emrecan.kurtcu\",\r\n    \"service\":\"TEST22\",\r\n    \"price\": 5.44,\r\n    \"currency\":\"TRY\",\r\n    \"isNegotiable\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}/api/v1/service-and-price/update",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"service-and-price",
+								"update"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Feb 2024 19:34:56 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"errorMessage\": null,\n    \"errorCode\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "DeleteServiceAndPriceReq",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"serviceId\":2,\r\n    \"username\":\"emrecan.kurtcu\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{host}}/api/v1/service-and-price/delete",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"service-and-price",
+						"delete"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DeleteServiceAndPriceSuccessResp",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"serviceId\":2,\r\n    \"username\":\"emrecan.kurtcu\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}/api/v1/service-and-price/delete",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"service-and-price",
+								"delete"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Feb 2024 19:35:47 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"errorMessage\": null,\n    \"errorCode\": null\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost:8080",
+			"type": "string"
+		}
+	]
+}

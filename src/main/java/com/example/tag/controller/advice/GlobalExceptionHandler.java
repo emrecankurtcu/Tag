@@ -1,6 +1,7 @@
 package com.example.tag.controller.advice;
 
 import com.example.tag.dto.response.BaseResponseModel;
+import com.example.tag.exception.ServiceAndPriceException;
 import com.example.tag.exception.TagException;
 import com.example.tag.exception.UserException;
 import org.springframework.http.HttpStatus;
@@ -16,6 +17,12 @@ public class GlobalExceptionHandler {
     @ResponseBody
     ResponseEntity<BaseResponseModel> handle(TagException tagException) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(BaseResponseModel.builder().success(false).errorMessage(tagException.getMessage()).build());
+    }
+
+    @ExceptionHandler({ServiceAndPriceException.class})
+    @ResponseBody
+    ResponseEntity<BaseResponseModel> handle(ServiceAndPriceException serviceAndPriceException) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(BaseResponseModel.builder().success(false).errorMessage(serviceAndPriceException.getMessage()).build());
     }
 
     @ExceptionHandler({UserException.class})
