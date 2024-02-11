@@ -1,5 +1,6 @@
 package com.example.tag.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -19,6 +20,25 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
+    @Value("${spring.google.client-id}")
+    private String googleClienId;
+    @Value("${spring.google.client-secret}")
+    private String googleClientSecret;
+    @Value("${spring.google.redirect-uri}")
+    private String googleRedirectUri;
+    @Value("${spring.google.auth-uri}")
+    private String googleAuthUri;
+    @Value("${spring.google.token-uri}")
+    private String googleTokenUri;
+    @Value("${spring.google.user-info-uri}")
+    private String googleUserInfoUri;
+    @Value("${spring.google.jwt-uri}")
+    private String googleJwtUri;
+    @Value("${spring.google.client-name}")
+    private String googleClientName;
+    @Value("${spring.google.client-registration-id}")
+    private String googleClientRegistrationId;
+
     @Bean
     public ClientRegistrationRepository clientRegistrationRepository() {
         return new InMemoryClientRegistrationRepository(this.googleClientRegistration());
@@ -32,27 +52,34 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                .authorizeHttpRequests(authorize -> authorize
-                        .anyRequest().authenticated()
-                ).oauth2Login(Customizer.withDefaults());
+                .authorizeHttpRequests(auth ->
+                        {
+                            auth.requestMatchers("/login/**").permitAll();
+                            auth.anyRequest().authenticated();
+                        }
+                )
+                .oauth2Login(oauth2Login ->
+                        oauth2Login
+                                .defaultSuccessUrl("/login/google/ok")
+                );
         return http.build();
     }
 
 
     private ClientRegistration googleClientRegistration() {
-        return ClientRegistration.withRegistrationId("google")
-                .clientId("923058022295-shk0e7eq323ih7emb61pr1tjtd5nk12u.apps.googleusercontent.com")
-                .clientSecret("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")
+        return ClientRegistration.withRegistrationId(googleClientRegistrationId)
+                .clientId(googleClienId)
+                .clientSecret(googleClientSecret)
                 .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
                 .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
-                .redirectUri("{baseUrl}/login/oauth2/code/{registrationId}")
+                .redirectUri(googleRedirectUri)
                 .scope("openid", "profile", "email", "address", "phone")
-                .authorizationUri("https://accounts.google.com/o/oauth2/v2/auth")
-                .tokenUri("https://www.googleapis.com/oauth2/v4/token")
-                .userInfoUri("https://www.googleapis.com/oauth2/v3/userinfo")
+                .authorizationUri(googleAuthUri)
+                .tokenUri(googleTokenUri)
+                .userInfoUri(googleUserInfoUri)
                 .userNameAttributeName(IdTokenClaimNames.SUB)
-                .jwkSetUri("https://www.googleapis.com/oauth2/v3/certs")
-                .clientName("Google")
+                .jwkSetUri(googleJwtUri)
+                .clientName(googleClientName)
                 .build();
     }
 }
